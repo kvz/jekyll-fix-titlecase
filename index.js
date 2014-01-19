@@ -35,7 +35,7 @@ cli.main(function(args, options) {
             return self.error(err);
           }
           if (newPost === null) {
-            self.debug('No need to change' + filepath + '\n');
+            self.debug('No need to change ' + filepath + '\n');
             return;
           }
 

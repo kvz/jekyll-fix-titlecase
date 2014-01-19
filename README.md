@@ -24,6 +24,9 @@ Here's how it looks when I run it against our [Transloadit](http://transloadit.c
 
 ```bash
 $ node index.js --debug --dir transloadit/_posts
+```
+
+```
 DEBUG: Scanning transloadit/_posts/*.{markdown,md}
 INFO: Rewriting transloadit/_posts/2010-04-04-welcome-to-the-blog.md
 DEBUG:  from Welcome to the blog
@@ -41,7 +44,7 @@ INFO: Rewriting transloadit/_posts/2010-07-02-we-are-launching-on-july-13.md
 DEBUG:  from We are launching on July 13
 DEBUG:    to We Are Launching on July 13
 
-DEBUG: No need to changetransloadit/_posts/2010-07-18-new-iphone-sdk.md
+DEBUG: No need to change transloadit/_posts/2010-07-18-new-iphone-sdk.md
 
 INFO: Rewriting transloadit/_posts/2010-08-12-haproxy-logging.md
 DEBUG:  from HAProxy logging
@@ -63,7 +66,7 @@ INFO: Rewriting transloadit/_posts/2010-07-19-new-free-plan.md
 DEBUG:  from New: Free plan
 DEBUG:    to New: Free Plan
 
-DEBUG: No need to changetransloadit/_posts/2010-11-11-support-for-rackspace-cloud-files.md
+DEBUG: No need to change transloadit/_posts/2010-11-11-support-for-rackspace-cloud-files.md
 
 INFO: Rewriting transloadit/_posts/2010-11-19-auto-rotation-for-iphone-videos.md
 DEBUG:  from Auto rotation for iphone videos
@@ -73,7 +76,7 @@ INFO: Rewriting transloadit/_posts/2010-12-20-realtime-encoding-over-150x-faster
 DEBUG:  from Realtime encoding - over 150x faster
 DEBUG:    to Realtime Encoding - Over 150x Faster
 
-DEBUG: No need to changetransloadit/_posts/2010-12-18-php-sdk.md
+DEBUG: No need to change transloadit/_posts/2010-12-18-php-sdk.md
 
 INFO: Rewriting transloadit/_posts/2010-12-16-demo-time.md
 DEBUG:  from Demo time!
@@ -123,7 +126,7 @@ INFO: Rewriting transloadit/_posts/2011-05-13-detecting-aborted-uploads.md
 DEBUG:  from Detecting aborted uploads
 DEBUG:    to Detecting Aborted Uploads
 
-DEBUG: No need to changetransloadit/_posts/2011-05-16-fixing-amazon-s3.md
+DEBUG: No need to change transloadit/_posts/2011-05-16-fixing-amazon-s3.md
 
 INFO: Rewriting transloadit/_posts/2011-05-26-new-frame-parameter-for-the-image-resize-robot.md
 DEBUG:  from New `frame` parameter for the /image/resize robot
@@ -137,15 +140,15 @@ INFO: Rewriting transloadit/_posts/2011-05-30-launching-our-new-design.md
 DEBUG:  from Launching our new design
 DEBUG:    to Launching Our New Design
 
-DEBUG: No need to changetransloadit/_posts/2011-06-06-exploding-growth.md
+DEBUG: No need to change transloadit/_posts/2011-06-06-exploding-growth.md
 
 INFO: Rewriting transloadit/_posts/2011-06-28-improved-persistence-for-temporary-files.md
 DEBUG:  from Improved persistence for temporary files
 DEBUG:    to Improved Persistence for Temporary Files
 
-DEBUG: No need to changetransloadit/_posts/2011-07-04-ruby-rails-sdks.md
+DEBUG: No need to change transloadit/_posts/2011-07-04-ruby-rails-sdks.md
 
-DEBUG: No need to changetransloadit/_posts/2011-07-05-scheduled-database-maintenance.md
+DEBUG: No need to change transloadit/_posts/2011-07-05-scheduled-database-maintenance.md
 
 INFO: Rewriting transloadit/_posts/2011-07-26-improved-assembly-detail-page-more.md
 DEBUG:  from Improved assembly detail page & more
@@ -179,7 +182,7 @@ INFO: Rewriting transloadit/_posts/2012-01-03-release-of-inofficial-nodejs-sdk.m
 DEBUG:  from Release of unofficial NodeJS SDK
 DEBUG:    to Release of Unofficial NodeJS SDK
 
-DEBUG: No need to changetransloadit/_posts/2012-01-12-new-pricing.md
+DEBUG: No need to change transloadit/_posts/2012-01-12-new-pricing.md
 
 INFO: Rewriting transloadit/_posts/2012-01-25-youtube-robot-released.md
 DEBUG:  from YouTube Robot released!
@@ -213,9 +216,9 @@ INFO: Rewriting transloadit/_posts/2012-04-04-more-features-assembly-cost-replay
 DEBUG:  from More features: assembly cost, replay api calls and custom params fields
 DEBUG:    to More Features: Assembly Cost, Replay Api Calls and Custom Params Fields
 
-DEBUG: No need to changetransloadit/_posts/2012-04-13-converting-to-twitter-bootstrap.md
+DEBUG: No need to change transloadit/_posts/2012-04-13-converting-to-twitter-bootstrap.md
 
-DEBUG: No need to changetransloadit/_posts/2012-04-18-introducing-rate-limiting.md
+DEBUG: No need to change transloadit/_posts/2012-04-18-introducing-rate-limiting.md
 
 INFO: Rewriting transloadit/_posts/2012-04-25-removing-support-for-realtime-encoding.md
 DEBUG:  from Removing support for realtime encoding
@@ -281,7 +284,7 @@ INFO: Rewriting transloadit/_posts/2013-01-02-improvements-for-how-assembly-cras
 DEBUG:  from Improvements for how assembly crashes are handled
 DEBUG:    to Improvements for How Assembly Crashes Are Handled
 
-DEBUG: No need to changetransloadit/_posts/2013-02-25-transloadit-javascript-plugin-and-jquery-1-9.md
+DEBUG: No need to change transloadit/_posts/2013-02-25-transloadit-javascript-plugin-and-jquery-1-9.md
 
 INFO: Rewriting transloadit/_posts/2013-03-23-we-have-added-support-for-svg-images.md
 DEBUG:  from We have added support for SVG images
@@ -295,7 +298,7 @@ INFO: Rewriting transloadit/_posts/2013-04-17-adding-density-parameter-to-the-do
 DEBUG:  from Adding `density` parameter to the /document/thumbs robot
 DEBUG:    to Adding `density` Parameter to the /document/thumbs Robot
 
-DEBUG: No need to changetransloadit/_posts/2013-04-24-api-announcements.md
+DEBUG: No need to change transloadit/_posts/2013-04-24-api-announcements.md
 
 INFO: Rewriting transloadit/_posts/2013-04-29-new-parameters-for-the-html-convert-robot.md
 DEBUG:  from New parameters for the /html/convert robot
@@ -353,7 +356,7 @@ INFO: Rewriting transloadit/_posts/2013-12-16-announcing-our-net-sdk.md
 DEBUG:  from Announcing our .NET SDK
 DEBUG:    to Announcing Our .NET SDK
 
-DEBUG: No need to changetransloadit/_posts/2014-01-14-transloadit-in-2013.md
+DEBUG: No need to change transloadit/_posts/2014-01-14-transloadit-in-2013.md
 ```
 
 ## Prior art
