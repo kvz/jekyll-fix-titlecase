@@ -6,11 +6,16 @@ var fixTitlecase = require('./lib/fix-titlecase');
 
 // --debug works out of the box. See -h
 cli.parse({
-  dir : ['dir', 'Directory with markdown posts to convert', 'path']
+  dir : ['dir', 'Directory with markdown posts to convert', 'path'],
+  title : ['title', 'Just one title as cli arg', 'string']
 });
 
 cli.main(function(args, options) {
   var self = this;
+  if (options.title) {
+    console.log(fixTitlecase.toTitleCase(options.title).trim());
+    return;
+  }
   if (!options.dir) {
     self.error('Please specify a dir');
     self.getUsage();

@@ -18,7 +18,14 @@ Iterates over markdown files in a directory and uppercases first letter of words
 
 Make sure your posts are safely under Git or other VCS so you can always review and revert any unwanted changes.
 
-## Example
+## Usage
+
+Here's how to run it against one title
+
+```bash
+$ node index.js --title 'Struggling with file uploads? Let us deal with progressbars, scaling ffmpeg, etc. - Focus on your product'
+Struggling With File Uploads? Let Us Deal With Progressbars, Scaling FFmpeg, etc. - Focus on Your Product
+```
 
 Here's how it looks when I run it against our [Transloadit](http://transloadit.com) blogposts
 
