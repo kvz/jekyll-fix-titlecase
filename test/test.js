@@ -31,6 +31,7 @@ var titleFixtures = {
   "don't break": "Don't Break",
   "catchy title: substance subtitle": "Catchy Title: Substance Subtitle",
   "we keep NASA capitalized": "We Keep NASA Capitalized",
+  "tus 1.0, a prerelease": "tus 1.0, a Prerelease",
   "leave Q&A unscathed": "Leave Q&A Unscathed",
   "Scott Moritz and TheStreet.com’s million iPhone la-la land": "Scott Moritz and TheStreet.com’s Million iPhone La-La Land",
   "you have a http://example.com/foo/ title": "You Have a http://example.com/foo/ Title",
