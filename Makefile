@@ -1,30 +1,25 @@
-SHELL := /bin/bash
-MOCHA      = node_modules/.bin/mocha
-REPORTER   = nyan
+SHELL    := /usr/bin/env bash
+MOCHA    := node_modules/.bin/mocha
+REPORTER := nyan
 
-test: build
+.PHONY: test
+test:
 	$(MOCHA) --reporter $(REPORTER) test/ --grep "$(GREP)"
 
-compile:
-	@echo "Compiling files"
-	time make build
-
-watch:
-	watch -n 2 make -s compile
-
+.PHONY: release-major
 release-major: build test
 	npm version major -m "Release %s"
 	git push
 	npm publish
 
+.PHONY: release-minor
 release-minor: build test
 	npm version minor -m "Release %s"
 	git push
 	npm publish
 
+.PHONY: release-patch
 release-patch: build test
 	npm version patch -m "Release %s"
 	git push
 	npm publish
-
-.PHONY: test lint build release compile watch

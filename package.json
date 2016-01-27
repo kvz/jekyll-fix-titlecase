@@ -18,6 +18,8 @@
     "markdown",
     "titlecase"
   ],
+  "main": "lib/fix-titlecase.js",
+  "bin": "bin/bin/jekyll-fix-titlecase.js",
   "bugs": {
     "url": "https://github.com/kvz/jekyll-fix-titlecase/issues"
   },
