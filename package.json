@@ -1,6 +1,6 @@
 {
   "name": "jekyll-fix-titlecase",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "globs over markdown posts and fixes title casing",
   "homepage": "http://github.com/kvz/jekyll-fix-titlecase",
   "author": "Kevin van Zonneveld <kevin@vanzonneveld.net>",
