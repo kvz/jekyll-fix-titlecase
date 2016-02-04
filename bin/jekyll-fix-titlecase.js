@@ -9,6 +9,7 @@ var fixTitlecase = require('../lib/fix-titlecase');
 // --debug works out of the box. See -h
 cli.parse({
   dir   : ['dir', 'Directory with markdown posts to convert', 'path'],
+  paths : ['paths', 'Instead of traversing dir, change all of these paths', 'string'],
   title : ['title', 'Just one title as cli arg', 'string'],
   fix   : ['fix', 'Try to fix Markdown blog posts automatically (warning: overwrites existing files)', 'boolean', false],
   body  : ['body', 'Try to fix Markdown titles in the body of the post automatically (warning: overwrites existing files)', 'boolean', false],
@@ -20,19 +21,29 @@ cli.main(function(args, options) {
     console.log(fixTitlecase.toTitleCase(options.title).trim());
     return;
   }
-  if (!options.dir) {
-    self.error('Please specify a dir');
+  if (!options.dir && !options.paths) {
+    self.error('Please specify a dir or paths');
     self.getUsage();
     return;
   }
 
   var pattern = options.dir + '/*.{markdown,md}';
+  var files   = []
+  if (options.paths) {
+    files   = options.paths.split(/\s+/);
+    pattern = '<list of paths>';
+  }
+
   self.debug('Scanning ' + pattern);
   var issuesFound = 0;
   var issuesFixed = 0;
-  glob(pattern, {}, function(err, files) {
-    if (err) {
+  glob(pattern, {}, function(err, globFiles) {
+    if (err && !files) {
       throw new Error(err);
+    }
+
+    if (files) {
+      globFiles = files;
     }
 
     var q = async.queue(function(filePath, cb){
@@ -82,7 +93,6 @@ cli.main(function(args, options) {
       }
       process.exit(0);
     };
-    q.push(files);
-
+    q.push(globFiles);
   });
 });
