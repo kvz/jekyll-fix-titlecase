@@ -50,21 +50,28 @@ var postFixtures = {
   '---\ntitle: "Access MySQL Without Password "': '---\ntitle: "Access MySQL Without Password"',
   '---\ntitle: "Better performance with mod_deflate"': '---\ntitle: "Better Performance With mod_deflate"',
   '---\ntitle: "New `frame` parameter for the /image/resize robot"': '---\ntitle: "New `frame` Parameter for the /image/resize Robot"',
-  '---\ntitle: "A word on the focus of php.js"': '---\ntitle: "A Word on the Focus of php.js"',
+  '---\ntitle: "A word on the focus"\n---\n\n## first of all': '---\ntitle: "A Word on the Focus"\n---\n\n## first of all',
   '---\ntitle: "Welcome to node.js"': null
+};
+
+var postBodyFixtures = {
+  '---\ntitle: "A word on the focus"\n---\n\n## first of all': '---\ntitle: "A Word on the Focus"\n---\n\n## First of All',
 };
 
 describe('fixTitlecase', function(){
   describe('newPost', function(){
-    it('should give an error for no frontmatter', function(done){
-      fixTitlecase.newPost('title: Hey', function (err, actualPost, oldTitle, newTitle) {
-        assert.strictEqual('No frontmatter in post', err);
-        done();
-      });
-    });
     _.each(postFixtures, function(expectedPost, brokenPost) {
       it('should become ' + (expectedPost+'').replace('---\n', ''), function(done){
-        fixTitlecase.newPost(brokenPost, function (err, actualPost, oldTitle, newTitle) {
+        fixTitlecase.newPost(brokenPost, {body: false}, function (err, actualPost, changes) {
+          assert.strictEqual(null, err);
+          assert.strictEqual(actualPost, expectedPost);
+          done();
+        });
+      });
+    });
+    _.each(postBodyFixtures, function(expectedPost, brokenPost) {
+      it('should become ' + (expectedPost+'').replace('---\n', ''), function(done){
+        fixTitlecase.newPost(brokenPost, {body: true}, function (err, actualPost, changes) {
           assert.strictEqual(null, err);
           assert.strictEqual(actualPost, expectedPost);
           done();

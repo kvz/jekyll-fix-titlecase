@@ -11,6 +11,7 @@ cli.parse({
   dir   : ['dir', 'Directory with markdown posts to convert', 'path'],
   title : ['title', 'Just one title as cli arg', 'string'],
   fix   : ['fix', 'Try to fix Markdown blog posts automatically (warning: overwrites existing files)', 'boolean', false],
+  body  : ['body', 'Try to fix Markdown titles in the body of the post automatically (warning: overwrites existing files)', 'boolean', false],
 });
 
 cli.main(function(args, options) {
@@ -40,12 +41,12 @@ cli.main(function(args, options) {
           throw new Error(err);
         }
 
-        fixTitlecase.newPost(content, function (err, newPost, oldTitle, newTitle) {
+        fixTitlecase.newPost(content, options, function (err, newPost, changes) {
           if (err) {
             throw new Error(err);
           }
 
-          if (newPost === null) {
+          if (changes.length === 0) {
             self.debug('No need to change ' + filePath);
             return cb();
           }
@@ -55,8 +56,12 @@ cli.main(function(args, options) {
           } else {
             self.info(' Issue in ' + filePath);
           }
-          self.debug('          ' + oldTitle);
-          self.debug('should be ' + newTitle);
+
+          for (var i in changes) {
+            self.debug('          ' + changes[i].oldTitle);
+            self.debug('should be ' + changes[i].newTitle);
+          }
+
           issuesFound++;
           if (options.fix) {
             fs.writeFileSync(filePath, newPost);
